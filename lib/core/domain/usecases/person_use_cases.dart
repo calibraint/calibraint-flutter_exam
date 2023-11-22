@@ -8,5 +8,6 @@ class PersonUseCases {
 
   PersonUseCases(this.repository);
 
-  Future<List<Person>> getPersonList() => repository.getPersonList();
+  Future<List<Person>> getPersonList(int quantity) =>
+      repository.getPersonList(quantity);
 }

@@ -1,5 +1,4 @@
-import 'package:equatable/equatable.dart';
-import 'package:flutter/foundation.dart';
+part of 'person_bloc.dart';
 
 @immutable
 abstract class PersonEvent extends Equatable {
@@ -7,9 +6,13 @@ abstract class PersonEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class GetInitialList extends PersonEvent {
+class FetchPersonList extends PersonEvent {
+  final int pageNo;
+
+  FetchPersonList(this.pageNo);
+
   @override
-  List<Object?> get props => [];
+  List<Object?> get props => [pageNo];
 }
 
 class GetPaginatedList extends PersonEvent {

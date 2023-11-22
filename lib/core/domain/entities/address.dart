@@ -11,7 +11,7 @@ class Address {
   final double? longitude;
 
   Address(
-      this.id,
+      {this.id,
       this.street,
       this.streetName,
       this.buildingNumber,
@@ -20,5 +20,19 @@ class Address {
       this.country,
       this.countyCode,
       this.latitude,
-      this.longitude);
+      this.longitude});
+
+  factory Address.fromJson(json) {
+    return Address(
+        id: json['id'],
+        street: json['street'],
+        streetName: json['streetName'],
+        buildingNumber: json['buildingNumber'],
+        city: json['city'],
+        zipcode: json['zipcode'],
+        country: json['country'],
+        countyCode: json['countyCode'],
+        latitude: json['latitude'],
+        longitude: json['longitude']);
+  }
 }
