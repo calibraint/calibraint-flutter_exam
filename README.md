@@ -1,6 +1,6 @@
 # flutter_exam
 
-This is a Flutter project showcasing the implementation of Clean Architecture with the BLoC pattern.
+This is a Flutter project showcasing the implementation of **Clean Architecture** with the **BLoC pattern**.
 The project is structured to promote separation of concerns, maintainability, and scalability.
 
 ## Table of Contents
@@ -36,10 +36,12 @@ The project is organized into the following main directories:
 
 - Flutter
 - Dart
-- BLoC Pattern
-- GetIt as Dependency Injection
+- flutter_bloc for state management
+- get_it used for Dependency Injection
 - Clean Architecture
 - http (HTTP client for data layer)
+- CachedNetworkImage used to handle memory cache effectively
+- go_router used for the Router and Navigation in an enhanced manner
 - flutter_test (for testing)
 
 ## Getting Started
@@ -57,25 +59,25 @@ The project is organized into the following main directories:
 
 ## Features
 1. Person list page as a home/default page (Data will be fetched from the FakeAPI based on query limit)
-> I have not made any custom logic to locally maintain data for the list as the FakerAPI provides different data set everytime but handled pagination as expected.Note: I have not made any custom logic to maintain data for the list as the FakerAPI provides different data set everytime but handled pagination as expected.
+> I have not made any custom logic to locally maintain data for the list as the FakerAPI provides different data set everytime but handled pagination as expected.
 2. Person's Detail page - This page will be redirected by app when user tap on any person as shows in the list page.
 
 ## Architecture Overview
 
 ### System Overview Diagram:
 ```yaml
-+--------------------------+
++-----------------------+
 |    Presentation       |
-|        Layer             |
-+-------------------------+
-|                             |
-|   Business Logic    |
-|      (Domain)          |
-|        Layer             |
-|                             |
-+--------------------------+
+|        Layer          |
++-----------------------+
+|                       |
+|   Business Logic      |
+|      (Domain)         |
+|        Layer          |
+|                       |
++-----------------------+
 |      Data Layer       |
-+-------------------------+
++-----------------------+
 ```
 
 ### Clean Architecture Layers:
@@ -86,17 +88,17 @@ The project is organized into the following main directories:
 +---------------------+
 ↑
 +-----------------------+
-|      Use Cases    |
-|       Layer          |
-+----------------------+
+|      Use Cases        |
+|       Layer           |
++-----------------------+
 ↑
 +------------------------------+
-|   Interface Adapters   |
-|       Layer                   |
+|   Interface Adapters         |
+|       Layer                  |
 +------------------------------+
 ↑
 +-------------------------------+
-|   Frameworks & Tools |
+|   Frameworks & Tools          |
 |       Layer                   |
 +-------------------------------+
 ```
