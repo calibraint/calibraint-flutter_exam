@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_exam/core/constants/api_keys.dart';
-import 'package:flutter_exam/core/constants/constants.dart';
+import '../../../core/constants/api_keys.dart';
+import '../../../core/constants/constants.dart';
 import '../../../core/domain/entities/person.dart';
 import '../../../core/domain/usecases/person_use_cases.dart';
 
@@ -54,5 +54,6 @@ class PersonBloc extends Bloc<PersonEvent, PersonState> {
     }
   }
 
+  /// This method may use in future when get ID via deeplink to get the full details
   FutureOr<void> _onGetDetail(GetDetail event, Emitter<PersonState> emit) {}
 }

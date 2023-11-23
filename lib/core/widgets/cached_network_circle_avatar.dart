@@ -4,13 +4,15 @@ import 'package:flutter/material.dart';
 /// Displays Avatar like a profile pic
 class CachedNetworkCircleAvatar extends StatelessWidget {
   final String imageUrl;
+  final double radius;
 
-  const CachedNetworkCircleAvatar({super.key, required this.imageUrl});
+  const CachedNetworkCircleAvatar(
+      {super.key, required this.imageUrl, required this.radius});
 
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-        radius: 40,
+        radius: radius,
         backgroundColor: Colors.grey,
         backgroundImage: CachedNetworkImageProvider(imageUrl),
         child: CachedNetworkImage(

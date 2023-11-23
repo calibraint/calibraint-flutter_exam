@@ -14,28 +14,32 @@ class LoadedListState extends PersonState {
   final bool hasReachedMax;
   final bool isFooterLoading;
   final int currentPageNo;
+  final Person personDetails;
 
   const LoadedListState(
       {required this.persons,
       required this.hasReachedMax,
       this.isFooterLoading = false,
-      required this.currentPageNo});
+      required this.currentPageNo,
+      this.personDetails = const Person()});
 
   LoadedListState copyWith(
       {List<Person>? persons,
       bool? hasReachedMax,
       bool? isFooterLoading,
-      int? currentPageNo}) {
+      int? currentPageNo,
+      Person? personDetails}) {
     return LoadedListState(
         persons: persons ?? this.persons,
         hasReachedMax: hasReachedMax ?? this.hasReachedMax,
         isFooterLoading: isFooterLoading ?? this.isFooterLoading,
-        currentPageNo: currentPageNo ?? this.currentPageNo);
+        currentPageNo: currentPageNo ?? this.currentPageNo,
+        personDetails: personDetails ?? this.personDetails);
   }
 
   @override
   List<Object?> get props =>
-      [persons, hasReachedMax, isFooterLoading, currentPageNo];
+      [persons, hasReachedMax, isFooterLoading, currentPageNo, personDetails];
 }
 
 class PersonDetailState extends PersonState {

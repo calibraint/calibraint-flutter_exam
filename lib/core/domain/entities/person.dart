@@ -12,7 +12,7 @@ class Person {
   final String? website;
   final String? image;
 
-  Person(
+  const Person(
       {this.id,
       this.firstname,
       this.lastname,

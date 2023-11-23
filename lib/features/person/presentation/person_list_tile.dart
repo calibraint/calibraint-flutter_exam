@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+import '../../../core/constants/constants.dart';
 import '../../../core/domain/entities/person.dart';
 import '../../../core/util/text_styles.dart';
 import '../../../core/widgets/cached_network_circle_avatar.dart';
@@ -14,7 +16,10 @@ class PersonListTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 8),
-      leading: CachedNetworkCircleAvatar(imageUrl: person.image ?? ''),
+      leading: CachedNetworkCircleAvatar(
+        imageUrl: person.image ?? '',
+        radius: Constants.smallAvatarRadius,
+      ),
       title: Text(
         "${person.firstname ?? ''} ${person.lastname}",
         style: TextStyles.titleStyle,
@@ -26,6 +31,9 @@ class PersonListTile extends StatelessWidget {
             style: TextStyles.subtitleStyle,
             maxLines: 1,
           )),
+      onTap: () {
+        context.pushNamed("details", extra: person);
+      },
     );
   }
 }

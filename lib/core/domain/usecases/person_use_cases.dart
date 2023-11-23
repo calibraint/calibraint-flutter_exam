@@ -1,4 +1,4 @@
-import 'package:flutter_exam/core/domain/repositories/person_repository.dart';
+import '../../../core/domain/repositories/person_repository.dart';
 
 import '../entities/person.dart';
 

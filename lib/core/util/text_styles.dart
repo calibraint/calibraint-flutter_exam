@@ -8,4 +8,6 @@ class TextStyles {
     fontWeight: FontWeight.normal,
     color: Colors.grey,
   );
+  static TextStyle largeTitleStyle =
+      const TextStyle(fontWeight: FontWeight.bold, fontSize: 18);
 }

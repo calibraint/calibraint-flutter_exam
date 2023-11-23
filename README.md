@@ -44,57 +44,62 @@ The project is organized into the following main directories:
 
 ## Getting Started
 
-1. Clone the repository:
+1. Clone the repository and prepare codebase to run:
    ```bash
    git clone https://github.com/calibraint/flutter_exam.git
    cd flutter_exam
    flutter pub get
    flutter run
 2. Open your preferred IDE and make sure the platform type to build and run as this will support below mentioned platforms
-   -Android
-   -iOS
-   -Web
+    - Android
+    - iOS
+    - Web
 
 ## Features
 1. Person list page as a home/default page (Data will be fetched from the FakeAPI based on query limit)
+> I have not made any custom logic to locally maintain data for the list as the FakerAPI provides different data set everytime but handled pagination as expected.Note: I have not made any custom logic to maintain data for the list as the FakerAPI provides different data set everytime but handled pagination as expected.
 2. Person's Detail page - This page will be redirected by app when user tap on any person as shows in the list page.
 
 ## Architecture Overview
 
 ### System Overview Diagram:
-+---------------------+
-|    Presentation    |
-|        Layer        |
-+---------------------+
-|                     |
+```yaml
++--------------------------+
+|    Presentation       |
+|        Layer             |
++-------------------------+
+|                             |
 |   Business Logic    |
-|      (Domain)       |
-|        Layer        |
-|                     |
-+---------------------+
-|      Data Layer     |
-+---------------------+
+|      (Domain)          |
+|        Layer             |
+|                             |
++--------------------------+
+|      Data Layer       |
++-------------------------+
+```
+
 ### Clean Architecture Layers:
+```yaml
 +---------------------+
 |      Entities       |
 |       Layer         |
 +---------------------+
 ↑
-+---------------------+
-|      Use Cases      |
-|       Layer         |
-+---------------------+
++-----------------------+
+|      Use Cases    |
+|       Layer          |
++----------------------+
 ↑
-+---------------------+
-|   Interface Adapters|
-|       Layer         |
-+---------------------+
++------------------------------+
+|   Interface Adapters   |
+|       Layer                   |
++------------------------------+
 ↑
-+---------------------+
-|   Frameworks & Tools|
-|       Layer         |
-+---------------------+
-
++-------------------------------+
+|   Frameworks & Tools |
+|       Layer                   |
++-------------------------------+
+```
 
 ### Presentation Layer
 
@@ -116,6 +121,7 @@ For code examples and more details, explore our project further. Feel free to co
 
 ## Code Organization
 ### Root Directory:
+```yaml
 ├── lib/
 ├── test/
 ├── android/
@@ -123,13 +129,15 @@ For code examples and more details, explore our project further. Feel free to co
 ├── web/
 ├── pubspec.yaml
 └── README.md
-
+```
 ### `lib` Directory:
+```yaml
 lib/
 ├── core/
 ├── features/
 ├── injections/
 └── main.dart
+```
 
 ### `main.dart`
 

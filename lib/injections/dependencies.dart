@@ -1,7 +1,6 @@
 import 'package:get_it/get_it.dart';
-import 'package:flutter_exam/core/domain/repositories/person_repository.dart';
-import 'package:flutter_exam/features/person/domain/person_bloc.dart';
-
+import '../../../core/domain/repositories/person_repository.dart';
+import '../../../features/person/domain/person_bloc.dart';
 import '../core/domain/usecases/person_use_cases.dart';
 import '../features/person/data/person_repository_impl.dart';
 

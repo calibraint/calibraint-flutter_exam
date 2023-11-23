@@ -35,4 +35,9 @@ class Address {
         latitude: json['latitude'],
         longitude: json['longitude']);
   }
+
+  @override
+  String toString() {
+    return "#$buildingNumber, $street,\n$streetName, $city,\n$country - $zipcode";
+  }
 }
